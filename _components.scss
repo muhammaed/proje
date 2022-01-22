@@ -1,0 +1,201 @@
+
+.login-area{
+ 
+.btn{
+    padding: 1rem 2rem;
+
+    
+    background-color: $light-color;
+    color: $primary-color;
+    box-sizing: border-box;
+    box-shadow: 5px 5px 5px 5px rgba($color: #fefefe, $alpha: .7);
+    border: none;
+    outline: none;
+    letter-spacing: .2rem;
+    transition: .4s all ease;
+      
+       @include media(medium){
+        padding: .8rem 1.5rem;
+        font-size: 1.2rem;
+       }
+
+            &:hover{
+                background-color: $primary-color;
+                color: $light-color;
+            }
+            &-primary{
+                background-color: $primary-color;
+                color: $light-color;
+
+                &:hover{
+                    background-color: $light-color;
+                    color: $primary-color;
+                }
+            }
+
+      
+}
+} 
+
+.review{
+    padding: 5rem;
+    margin-left: 10rem;
+    line-height: 1.8rem;
+    font-size: 1.3rem;
+    align-items: center;
+    border-left: 1px solid $primary-color;
+    border-bottom: 1px solid $primary-color;
+    height: 50vh;
+    transform: skew(-28deg);
+
+    h3{
+        font-size: 2.7rem;
+        transform: skew(28deg);
+        margin: 2rem 0;
+    }
+
+    &-tags{
+        transform: skew(28deg);
+        margin: 1rem 0;
+        font-size: 1.5rem;
+        color: $light-color;
+        text-transform: uppercase;
+    }
+
+    &-text{
+        transform: skew(28deg);
+        margin:1rem 0 ;
+        font-size: 1.3rem;
+        margin: 1rem 0;
+        font-family: monospace;
+    }
+
+    &-user{
+        display: flex;
+        transform: skew(28deg);
+
+        &-rating{
+
+            margin-left:2rem;
+
+            .checked{
+                color: $primary-color;
+            }
+            
+        }
+
+        &-detail{
+            font-family: $primary-font;
+        }
+
+        &-platform{
+            display: inline-block;
+            margin-left: .3rem;
+            :not(:last-child){
+               color:$primary-color ; 
+            }
+
+            
+        }
+
+        .review-user-name{
+            color: $primary-color;
+        }
+        .review-user-date{
+            color: $date-color;
+            width: 5rem;
+        }
+
+        img{
+            width: 8rem;
+            margin-right: 3rem;
+            border-radius: 50%;
+        }
+    }
+}
+
+/*Card*/
+
+.card{
+    height: 40rem;
+    perspective: 10px;
+    
+    
+
+    &-inner{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        text-align:center ;
+    }
+
+    .card-front, .card-back{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        backface-visibility: hidden;
+        transition: 1s all ease;
+        perspective: 10px;
+    }
+
+    .card-front{
+        background-color: $primary-color;
+
+        h4{
+            font-size: 2rem;
+            height: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2.4rem;
+        }
+        img{
+            height: 80%;
+        }
+       
+    }
+
+    .card-back{
+        background-color: $Secondary-color;
+        transform: rotateY(180deg);
+        display: table;
+
+        &-content{
+           display: table-cell;
+           vertical-align: middle;
+           transform: skew(-15deg);
+
+           h4{
+               font-size: 3rem;
+           }
+           a{
+               margin:1rem ;
+               width: 3rem;
+               height: 3rem;
+               padding-top: 2rem;
+               
+               i{
+                   transition: $general-transition;
+             
+
+               &:hover {
+                   transform: skew(-15deg);
+                   color:darken($primary-color, 30%);
+               }
+           } 
+         }
+        }
+        
+    }
+
+    &:hover .card-front{
+        transform: rotateY(180deg) skew(25deg);
+    }
+
+    &:hover .card-back{
+        transform: skew(15deg);
+    }
+}

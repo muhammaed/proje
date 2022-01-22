@@ -1,0 +1,72 @@
+/* Import dev kullanmi */
+@import url('https://fonts.googleapis.com/css2? family= Changa & family= Open+Sans:ital,wght@1,300 & family= Orelega+One & family= Roboto+Mono:ital, wgh@1,100 & displey=dəyişdir');
+
+/* VARABAILES  */
+$primary-font:'Canga', sans-serif;
+$secondary-font:'Open Sans', sans-serif;
+$primary-color:#E51515;
+$Secondary-color: #14151A;
+$date-color:#FFB320;
+$comments-color:#08ABBD;
+$gray-color:#9F9F9F;
+$light-color:#EFEFEF;
+$general-transition:.5s all ease;
+
+/* Utalities classes */
+
+.bg{
+    &-dark{
+        background-color: $Secondary-color;
+    }
+    &-light{
+        background-color: $light-color;
+    }
+}
+
+.text-light{
+    color: $light-color;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.text-primary{
+    color: $primary-color;
+}
+
+
+.ml{
+    &-2{
+        margin-left: 2rem;
+    }
+}
+
+@mixin value($align-items, $justify-content, $display){
+    display: $align-items;
+    justify-content: $justify-content;
+    align-items: $display;
+}
+
+@mixin media($screensize){
+
+    @if ($screensize == large){
+        @media (max-width:992px) {@content};
+        
+    }
+    
+    @if ($screensize == medium){
+        @media (max-width:768px) {@content};
+        
+    }
+    
+    @if ($screensize == small){
+        @media (max-width:576px) {@content};
+        
+    }
+    @if ($screensize == none){
+        @media (max-width:0px) {@content};
+        
+    }
+}
+
